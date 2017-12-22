@@ -22,12 +22,13 @@ public class CSVUtilities {
 		try 
 		{
 			br = new BufferedReader(new FileReader(csv));
-			ArrayList<Data> data = new ArrayList<Data>();
 			String line = br.readLine();
 			while(line!=null)
 			{
 				String[]seperator = line.split(",");
-				
+				numColumns = seperator.length;
+				for(int i = 0;i<numColumns;i++)
+					CSVData.add(seperator[i]);
 			}
 			
 		}
@@ -36,6 +37,7 @@ public class CSVUtilities {
 			System.out.println("File could not open");
 		
 		}
+		
 	}
 	public List getColumnHeaders()
 	{
@@ -53,8 +55,9 @@ public class CSVUtilities {
 		return null;
 		
 	}
-	public List<Double> getDataDouble(int column)
+	public List getDataDouble(int column)
 	{
+		return null;
 		
 	}
 }
